@@ -1,66 +1,77 @@
 body{
-  background-image: linear-gradient(120deg, #8EC5FC 0%, #E0C3FC 100%);
-  background-color: cover;
+  background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );  
+  color: white; 
+  min-height: 100vh;  
 }
 
 h1{
   text-align: center;
-  margin-top: 2.0%;
-  font-family: 'Alkatra', cursive;
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Lobster', cursive;
-}
-label{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.container{
-  max-width: 50vw;
-  margin-top: 5vh;
-  padding: 10%;
-  background-color: rgb(212, 242, 242);
-}
+  color: rgb(85, 82, 64);}
 
-form{
-  max-width: 100%;
-  height: 100%;
-}
-.error-message {
-
-  color: red;
-  font-size: 15px;
- 
-}
-.a{
-   
-  display: table;      }
-p{ 
-  display: table-row;  
-
-}
-
-label{
-   display: table-cell;
-}
-
-input { 
-  display: table-cell;
-  max-width: 10.5vw;
-  border-color: #8f0505;
-  
- }
- 
- #btn{
-  background-color:rgb(225, 181, 225);
-  border-radius: 8px;
-  color: blue;
- }
- #btn:focus{
-  background-color:rgb(148, 201, 41);
- }
-
- /* for responsiveness for h1 */
- @media screen  and (max-width:500px) {
-  h1{
-    font-size: 100%;
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of buttons accordingly */
+    grid-gap:2px; /* Adjust the spacing between buttons as desired */
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 4px;
+    margin-top: 2px;
   }
+.table{
+    width: 50vw;
+    height: 55vh;
+}
+
+.display{
+    width: 100%;
+    height: 6.4vh;
+    background-color:rgb(122, 150, 206)
+}
+
+table{
+    background-color: rgb(61, 61, 58);
+}
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+button{
+    background-color:rgb(118, 216, 238);
+    box-sizing: border-box;
+    border-radius: 2px;
+    color:rgb(44, 60, 28);
+}
+
+button:hover{
+    background-color: rgb(137, 11, 201);
+}
+  
+.tdclass{
+    background-color: rgb(14, 12, 12);
+    padding: 4px 4px;
+}
+  
+@media screen  and (max-width:500px) {
+    .tt{
+      width: 80vw;
+      height: 90%;
+  }
+  .table{
+    width: 50vw;
+    height:100%
+}
+.display{
+    width: 100%;
+    height: 6.4vh;
+    background-color:rgb(122, 150, 206)
+}
+}
+
+#del{
+    background-color: red;
+}
+#ac{
+   background-color: rgb(240, 219, 219);
 }

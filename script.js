@@ -1,46 +1,50 @@
- function validateForm() {
-      var name = document.forms["myForm"]["name"].value;
-      var email = document.forms["myForm"]["email"].value;
-      var phone = document.forms["myForm"]["phone"].value;
-      var password = document.forms["myForm"]["password"].value;
-      var confirmPassword = document.forms["myForm"]["confirmPassword"].value;
-      
-      // Name validation
-      if (name.length < 5) {
-        document.getElementById("nameError").textContent ="Name must be at least 5 characters long";
-        return false;
-      }
-      document.getElementById("nameError").textContent ="";
-      
-      // Email validation
-      if (!email.includes("@")) {
-        document.getElementById("emailError").textContent ="Enter a valid email address";
-        return false;
-      }
-      document.getElementById("emailError").textContent ="";
+const ac=document.querySelector(".ac");//done
+const inputbox=document.querySelector("#calculationInput");//done
 
-      // Phone number validation
-      if (phone === "123456789" || phone.length !== 10 || isNaN(phone)) {
-        document.getElementById("phoneError").textContent = "Enter a valid 10-digit phone number";
-        return false;
-      }
-      document.getElementById("phoneError").textContent ="";
-  
-      
-      // Password validation
-      if (password.length < 8 || password === "password" || password === name) {
-        document.getElementById("passwordError").textContent ="Password must be at least 8 characters long and should not be 'password' or your name";
-        return false;
-      }
-      document.getElementById("passwordError").textContent ="";
-      
-      // Confirm password validation
-      if (password !== confirmPassword) {
-        document.getElementById("CpasswordError").textContent ="Passwords do not match";
-        return false;
-      }
-      document.getElementById("CpasswordError").textContent ="";
-    }
+//for clear
+ac.addEventListener("click",()=>{
+      inputbox.value = "";
+   }
+);
+//for delete
+function deleted(){
+   var text=inputbox.value;
+   var modifiedText = text.slice(0, -1); // Remove the last letter
+   inputbox.value = modifiedText;
+}
+//for every button
+var c = 0;
 
+function adder(value) {
+  // Retrieve the input element
+  var inputbox = document.getElementById("calculationInput");
 
+  if (c == 1) {
+    inputbox.value = "";
+    inputbox.style.backgroundColor = "";
+    c = 0;
+  }
 
+  if (value === "=") {
+    if (inputbox.value == "") {
+      inputbox.style.backgroundColor = "red";
+      c = 1;
+       // Exit the function if input is empty
+    }else
+    inputbox.value = String(eval(inputbox.value));
+
+  } else {
+   
+    var rinput = inputbox.classList;
+    rinput.remove("red");
+    var text = inputbox.value;
+    var modifiedText = text + value;
+    inputbox.value = modifiedText;
+  }
+}
+
+//for square of number
+function square(){
+  let ans=(Number(inputbox.value));
+  inputbox.value=String(ans*ans);
+}
